@@ -19,7 +19,7 @@ const TabList = ({ data }) => {
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
-            <TableRow>
+            <TableRow className="tabrow">
               {tabHead.map((hCell, i) => (
                 <TableCell key={hCell} className="tabCell">
                   {hCell}

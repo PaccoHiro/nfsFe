@@ -3,25 +3,30 @@
 
   .widgets {
     display: flex;
+    flex-wrap: wrap;
+
     gap: 20px;
   }
   .charts {
     padding: 20px 0px;
     display: flex;
+    flex-wrap: wrap;
+
     gap: 20px;
-    .contfeatured {
-      flex: 2;
-    }
-    .contchart {
-      flex: 5;
-    }
+    // .contfeatured {
+    //   width: auto;
+    //   flex: 2;
+    // }
+    // .contchart {
+    //   width: auto;
+
+    //   flex: 5;
+    // }
   }
   .lists {
     display: flex;
-    gap: 20px;
-    .listcontainer {
-      flex: 1;
-      display: flex;
-    }
+    flex-wrap: wrap;
+
+    gap: 15px;
   }
 }

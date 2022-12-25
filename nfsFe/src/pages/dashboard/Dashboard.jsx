@@ -15,18 +15,19 @@ const Dashboard = () => {
         <Widget />
       </div>
       <div className="charts">
-        <div className="contfeatured">
+        <Featured />
+        <Chart />
+
+        {/* <div className="contfeatured">
           <Featured />
         </div>
         <div className="contchart">
           <Chart />
-        </div>
+        </div> */}
       </div>
       <div className="lists">
-        <div className="listcontainer">
-          <TabList data={lastSalesData} />
-          <TabList data={topSellers} />
-        </div>
+        <TabList data={lastSalesData} />
+        <TabList data={topSellers} />
       </div>
     </div>
   );
