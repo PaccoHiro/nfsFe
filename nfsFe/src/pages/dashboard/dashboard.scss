@@ -13,15 +13,15 @@
     flex-wrap: wrap;
 
     gap: 20px;
-    // .contfeatured {
-    //   width: auto;
-    //   flex: 2;
-    // }
-    // .contchart {
-    //   width: auto;
+    .contfeatured {
+      width: auto;
+      flex: 2;
+    }
+    .contchart {
+      width: auto;
 
-    //   flex: 5;
-    // }
+      flex: 5;
+    }
   }
   .lists {
     display: flex;

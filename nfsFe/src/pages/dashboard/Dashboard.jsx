@@ -15,15 +15,15 @@ const Dashboard = () => {
         <Widget />
       </div>
       <div className="charts">
-        <Featured />
-        <Chart />
+        {/* <Featured />
+        <Chart /> */}
 
-        {/* <div className="contfeatured">
+        <div className="contfeatured">
           <Featured />
         </div>
         <div className="contchart">
           <Chart />
-        </div> */}
+        </div>
       </div>
       <div className="lists">
         <TabList data={lastSalesData} />
