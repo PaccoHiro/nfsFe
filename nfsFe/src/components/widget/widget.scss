@@ -6,10 +6,11 @@
   justify-content: space-between;
   padding: 10px;
   height: 120px;
-  border: 0.2px solid #6b33ff;
+  // border: 0.2px solid #6b33ff;
   border-radius: 10px;
-  -webkit-box-shadow: 6px 7px 6px -3px rgba(0, 0, 0, 0.52);
-  box-shadow: 6px 7px 6px -3px rgba(0, 0, 0, 0.52);
+  box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.07);
   .left,
   .right {
     height: 100%;
