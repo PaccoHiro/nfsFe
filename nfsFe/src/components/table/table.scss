@@ -1,0 +1,40 @@
+.table {
+  flex: 1;
+
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.07);
+  -moz-box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.07);
+  .title {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(194, 193, 193);
+  }
+}
+.tabCell {
+  .statusCell {
+    padding: 5px;
+    border-radius: 5px;
+
+    &.Delivered {
+      color: green;
+      background-color: rgba(0, 128, 0, 0.276);
+    }
+    &.Processing {
+      color: orange;
+      background-color: rgba(255, 166, 0, 0.295);
+    }
+    &.Returned {
+      color: red;
+      background-color: rgba(255, 0, 0, 0.285);
+    }
+  }
+  img {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
