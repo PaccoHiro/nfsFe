@@ -14,4 +14,24 @@
   .gridcontainer {
     flex: 1;
   }
+  .cellActions {
+    display: flex;
+    gap: 20px;
+    .view {
+      width: 60px;
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid rgb(8, 193, 235);
+      background-color: rgba(8, 193, 235, 0.26);
+      color: black;
+    }
+    .delete {
+      width: 60px;
+      height: 30px;
+      border-radius: 5px;
+      border: 1px solid rgb(235, 8, 8);
+      background-color: rgba(235, 8, 8, 0.267);
+      color: black;
+    }
+  }
 }
