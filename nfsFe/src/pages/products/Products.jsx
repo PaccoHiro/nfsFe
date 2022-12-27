@@ -1,10 +1,11 @@
 import Datatable from "../../components/datatable/Datatable";
+import { datagridSource } from "../../helpers/dataSource/datagridSource";
 import "./products.scss";
 
 const Products = () => {
   return (
     <div className="products">
-      <Datatable />
+      <Datatable data={datagridSource} />
     </div>
   );
 };
