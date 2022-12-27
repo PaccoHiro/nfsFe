@@ -15,11 +15,15 @@ const Datatable = () => {
     {
       field: "actions",
       headerName: "Actions",
-      description: "This column has a value getter and is not sortable.",
       sortable: false,
       width: 160,
-      valueGetter: (params) => {
-        // `${params.row.firstName || ""} ${params.row.lastName || ""}`
+      renderCell: () => {
+        return (
+          <div className="cellActions">
+            <button className="view">View</button>
+            <button className="delete">Delete</button>
+          </div>
+        );
       },
     },
   ];
