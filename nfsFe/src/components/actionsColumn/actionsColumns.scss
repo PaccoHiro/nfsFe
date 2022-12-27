@@ -1,0 +1,28 @@
+.cellActions {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  .view {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(8, 193, 235);
+    background-color: rgba(8, 193, 235, 0.068);
+    color: black;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .delete {
+    padding: 5px 10px;
+
+    border-radius: 5px;
+    border: 1px solid rgb(235, 8, 8);
+    background-color: rgba(235, 8, 8, 0.055);
+    color: black;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
