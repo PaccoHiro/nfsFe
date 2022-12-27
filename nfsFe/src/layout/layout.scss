@@ -19,5 +19,10 @@
       border-bottom: 0.5px solid rgba(194, 193, 193, 0.747);
       //   background-color: papayawhip;
     }
+    .container {
+      width: 100%;
+      height: calc(100% - 50.8px);
+      display: flex;
+    }
   }
 }
