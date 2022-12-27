@@ -1,6 +1,6 @@
 const lastSalesData = {
   title: "last sales ",
-  tabHead: ["Date", "Customer", "City", "Amount (MAD)", "Status"],
+  tabHead: ["Date", "Customer", "City", "Amount(MAD)", "Status"],
   rows: [
     [
       "11/12/2022",
