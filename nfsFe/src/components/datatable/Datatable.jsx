@@ -22,8 +22,8 @@ const Datatable = ({ data }) => {
           columns={data.columns.concat(actionsColumn)}
           pageSize={8}
           rowsPerPageOptions={[8]}
-
-          // checkboxSelection
+          disableSelectionOnClick
+          checkboxSelection
         />
       </div>
     </div>

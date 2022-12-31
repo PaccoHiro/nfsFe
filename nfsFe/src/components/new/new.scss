@@ -1,0 +1,86 @@
+.new {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  // box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.07);
+  // -webkit-box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.07);
+  // -moz-box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+  .title {
+    width: 100%;
+    height: 25px;
+    margin-left: 40px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(194, 193, 193);
+  }
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 40px;
+    .formwrapper {
+      //   width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+      margin: 10px 40px;
+      .forminput {
+        width: 40%;
+        min-width: 300px;
+        .inputkey {
+          font-size: large;
+          font-weight: bold;
+        }
+        .inputvalue {
+          width: 100%;
+
+          margin-top: 10px;
+          font-size: large;
+          border: none;
+          outline: none;
+          border-bottom: 1px solid rgba(0, 0, 0, 0.281);
+        }
+      }
+    }
+    .grpbuttons {
+      display: flex;
+      gap: 20px;
+
+      align-self: flex-end;
+      margin-right: 40px;
+      width: 30%;
+      .submitbutton {
+        flex: 1;
+        align-items: center;
+        justify-content: space-between;
+        font-size: large;
+        border: 1px solid green;
+        border-radius: 10px;
+        background-color: rgba(0, 128, 0, 0.253);
+        cursor: pointer;
+        &:hover {
+          background-color: rgba(0, 128, 0, 0.459);
+        }
+      }
+      .cancelbutton {
+        flex: 1;
+        font-size: large;
+        border: 1px solid red;
+        border-radius: 10px;
+
+        background-color: rgba(255, 0, 0, 0.226);
+        cursor: pointer;
+        &:hover {
+          background-color: rgba(255, 0, 0, 0.527);
+        }
+      }
+    }
+  }
+}
