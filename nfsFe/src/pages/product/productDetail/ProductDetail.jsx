@@ -1,7 +1,7 @@
-import Chart from "../../components/chart/Chart";
-import SingleDetail from "../../components/singleDetail/singleDetail";
-import TabList from "../../components/table/Table";
-import lastSalesData from "../../helpers/dataSource/data";
+import Chart from "../../../components/chart/Chart";
+import SingleDetail from "../../../components/singleDetail/singleDetail";
+import TabList from "../../../components/table/Table";
+import lastSalesData from "../../../helpers/dataSource/data";
 import "./productDetail.scss";
 
 const ProductDetail = () => {
