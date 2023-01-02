@@ -1,5 +1,5 @@
-import Datatable from "../../components/datatable/Datatable";
-import { datagridSource } from "../../helpers/dataSource/datagridSource";
+import Datatable from "../../../components/datatable/Datatable";
+import { datagridSource } from "../../../helpers/dataSource/datagridSource";
 import "./products.scss";
 
 const Products = () => {
