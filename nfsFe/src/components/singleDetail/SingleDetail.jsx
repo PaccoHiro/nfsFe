@@ -1,53 +1,28 @@
 import "./singleDetail.scss";
 
-const SingleDetail = () => {
+const SingleDetail = ({ data }) => {
+  console.log(data);
   return (
-    <div className="singleDetail">
-      <div className="detailimage">
-        <div className="title">Informations :</div>
-        <img
-          src="https://images.unsplash.com/photo-1672262103314-7ac4db3563ef"
-          alt=""
-        />
-      </div>
-      <div className="details">
-        <div className="detailfield">
-          <span className="fieldkey">Category</span>
-          <span className="fieldvalue">car</span>
+    <div className="singleDetailWrap">
+      <div className="title">{data.title}</div>
+      <div className="singleDetail">
+        {data.values.image && (
+          <div className="detailimage">
+            <img src={data.values.image.src} alt="" />
+          </div>
+        )}
+        <div className="details">
+          {data.keys.map((key, i) => (
+            <div className="detailfield" key={i}>
+              <span className="fieldkey">{key}</span>
+              <span className="fieldvalue">
+                {data.values[key.toLowerCase()]}
+              </span>
+            </div>
+          ))}
+
+          <div className="editbutton">Edit</div>
         </div>
-        <div className="detailfield">
-          <span className="fieldkey">Category</span>
-          <span className="fieldvalue">car</span>
-        </div>
-        <div className="detailfield">
-          <span className="fieldkey">Category</span>
-          <span className="fieldvalue">car</span>
-        </div>
-        <div className="detailfield">
-          <span className="fieldkey">Category</span>
-          <span className="fieldvalue">car</span>
-        </div>
-        <div className="detailfield">
-          <span className="fieldkey">Category</span>
-          <span className="fieldvalue">car</span>
-        </div>
-        <div className="detailfield">
-          <span className="fieldkey">Category</span>
-          <span className="fieldvalue">car</span>
-        </div>
-        <div className="detailfield">
-          <span className="fieldkey">Category</span>
-          <span className="fieldvalue">car</span>
-        </div>
-        <div className="detailfield">
-          <span className="fieldkey">Category</span>
-          <span className="fieldvalue">car</span>
-        </div>
-        <div className="detailfield">
-          <span className="fieldkey">Category</span>
-          <span className="fieldvalue">car</span>
-        </div>
-        <div className="editbutton">Edit</div>
       </div>
     </div>
   );
