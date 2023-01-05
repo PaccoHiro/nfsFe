@@ -1,8 +1,8 @@
-import Chart from "../../../components/chart/Chart";
+import Datatable from "../../../components/datatable/Datatable";
 import SingleDetail from "../../../components/singleDetail/singleDetail";
-import TabList from "../../../components/table/Table";
-import lastSalesData from "../../../helpers/dataSource/data";
+
 import { dataDetailCustomer } from "../../../helpers/dataSource/dataDetailCutomer";
+import { dataGridCustomerDetail } from "../../../helpers/dataSource/dataGridCustomerDetail";
 import "./customerDetail.scss";
 
 const CustomerDetail = () => {
@@ -12,12 +12,7 @@ const CustomerDetail = () => {
         <SingleDetail data={dataDetailCustomer} />
       </div>
       <div className="bottom">
-        <div className="left">
-          <TabList data={lastSalesData} />
-        </div>
-        <div className="right">
-          <Chart />
-        </div>
+        <Datatable data={dataGridCustomerDetail} rowsperpage={8} />
       </div>
     </div>
   );

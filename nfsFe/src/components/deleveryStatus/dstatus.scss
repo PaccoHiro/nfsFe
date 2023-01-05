@@ -1,0 +1,23 @@
+.dstatusWrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .dstatus {
+    padding: 5px 10px;
+    border-radius: 5px;
+    &.Delivered {
+      color: green;
+      background-color: rgba(0, 128, 0, 0.276);
+    }
+    &.Processing {
+      color: orange;
+      background-color: rgba(255, 166, 0, 0.295);
+    }
+    &.Returned {
+      color: red;
+      background-color: rgba(255, 0, 0, 0.285);
+    }
+  }
+}

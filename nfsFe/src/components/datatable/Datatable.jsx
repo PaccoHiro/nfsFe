@@ -2,7 +2,7 @@ import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import ActionsColumn from "../actionsColumn/ActionsColumns";
 
-const Datatable = ({ data }) => {
+const Datatable = ({ data, rowsperpage }) => {
   const actionsColumn = [
     {
       field: "actions",
@@ -20,8 +20,8 @@ const Datatable = ({ data }) => {
         <DataGrid
           rows={data.rows}
           columns={data.columns.concat(actionsColumn)}
-          pageSize={8}
-          rowsPerPageOptions={[8]}
+          pageSize={rowsperpage ? rowsperpage : 8}
+          rowsPerPageOptions={rowsperpage ? [rowsperpage] : [8]}
           disableSelectionOnClick
           checkboxSelection
         />
