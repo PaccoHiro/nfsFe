@@ -1,9 +1,12 @@
 import "./singleDetail.scss";
 
 const SingleDetail = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   return (
-    <div className="singleDetailWrap">
+    <div
+      className="singleDetailWrap"
+      style={{ fontSize: data.fontSize ? data.fontSize : "1em" }}
+    >
       <div className="title">{data.title}</div>
       <div className="singleDetail">
         {data.values.image && (
@@ -13,10 +16,15 @@ const SingleDetail = ({ data }) => {
         )}
         <div className="details">
           {data.keys.map((key, i) => (
-            <div className="detailfield" key={i}>
+            <div
+              className="detailfield"
+              key={i}
+              style={{ width: data.width ? data.width : "40%" }}
+            >
               <span className="fieldkey">{key}</span>
               <span className="fieldvalue">
-                {data.values[key.toLowerCase()]}
+                {console.log(data.values[key.replace(" ", "").toLowerCase()])}
+                {data.values[key.replace(" ", "").toLowerCase()]}
               </span>
             </div>
           ))}

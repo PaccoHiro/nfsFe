@@ -12,6 +12,9 @@ import NewItem from "./product/newItem/NewItem";
 import Customers from "./customers/customers/Customers";
 import CustomerDetail from "./customers/customerDetail/CustomerDetail";
 import NewCustomer from "./Customers/newCustomer/NewCustomer";
+import OrderDetail from "./orders/orderDetail/orderDetail";
+import Orders from "./orders/orders/Orders";
+import NewOrder from "./orders/newOrder/NewOrder";
 
 const Root = createRoutesFromElements(
   <>
@@ -27,6 +30,11 @@ const Root = createRoutesFromElements(
           <Route index element={<Customers />} />
           <Route path=":customerId" element={<CustomerDetail />} />
           <Route path="new" element={<NewCustomer />} />
+        </Route>
+        <Route path="orders">
+          <Route index element={<Orders />} />
+          <Route path=":customerId" element={<OrderDetail />} />
+          <Route path="new" element={<NewOrder />} />
         </Route>
       </Route>
     </Route>

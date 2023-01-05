@@ -1,10 +1,11 @@
-import New from "../../../components/new/New";
 import "./newItem.scss";
+import New from "../../../components/new/New";
+import { itemFormData } from "../../../helpers/dataSource/formInputData";
 
 const NewItem = () => {
   return (
     <div className="newitem">
-      <New />
+      <New formData={itemFormData} />
     </div>
   );
 };
