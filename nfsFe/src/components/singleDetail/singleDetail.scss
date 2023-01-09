@@ -1,19 +1,20 @@
 @use "../../style/style.scss";
 
 .singleDetailWrap {
-  border-radius: 10px;
+  font-size: 1rem;
+  border-radius: 0.625em;
   -webkit-box-shadow: style.$custom-box-shadow;
   -moz-box-shadow: style.$custom-box-shadow;
   box-shadow: style.$custom-box-shadow;
-  padding: 20px;
+  padding: 1.25em;
   flex: 1;
   display: flex;
   flex-direction: column;
   .title {
     width: 100%;
-    height: 25px;
+    height: 1.5625em;
     text-align: left;
-    font-size: 20px;
+    font-size: 1.25em;
     font-weight: bold;
     color: rgb(194, 193, 193);
   }
@@ -24,7 +25,7 @@
     flex: 1;
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1.25em;
 
     .detailimage {
       flex: 1;
@@ -32,14 +33,14 @@
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
-      gap: 40px;
+      gap: 2.5em;
       align-items: center;
 
-      padding: 10px;
+      padding: 0.625em;
 
       img {
-        height: 280px;
-        width: 280px;
+        height: 17.5em;
+        width: 17.5em;
         // width: 100%;
         // height: auto;
         border-radius: 15px;
@@ -47,21 +48,25 @@
     }
     .details {
       flex: 3;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(31.75em, 100%), 1fr));
+      column-gap: 2em;
+      // display: flex;
+      // flex-wrap: wrap;
+      // justify-content: space-around;
       .detailfield {
-        width: 40%;
-        min-width: 220px;
+        // width: 100%;
+        // width: 40%;
+        // min-width: 13.75em;
         display: flex;
         align-items: center;
-        gap: 40px;
+        gap: 2em;
         border-bottom: 1px solid rgba(0, 0, 0, 0.233);
-        margin-bottom: 40px;
-        padding: 10px;
+        margin-bottom: 1.5em;
+        padding: 0.625em;
         .fieldkey {
           width: 30%;
-          font-size: large;
+          font-size: 1.3em;
           font-weight: bold;
         }
       }
@@ -69,13 +74,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 10px;
-        width: 40%;
-        max-width: 400px;
-        height: 25px;
-        border: 1px solid rgb(105, 238, 220);
+        padding: 0.625em;
+        // width: 40%;
+        // max-width: 35.625em;
+        height: 1.5625em;
+        border: 0.0625em solid rgb(105, 238, 220);
         background-color: rgba(105, 238, 220, 0.274);
-        border-radius: 10px;
+        border-radius: 0.625em;
         &:hover {
           background-color: rgb(105, 238, 220);
           cursor: pointer;

@@ -1,59 +1,23 @@
 import "./new.scss";
 
-const New = () => {
+const New = ({ formData }) => {
   return (
     <div className="new">
       <div className="title">Add New : </div>
       <form>
         <div className="formwrapper">
-          <div className="forminput">
-            <label htmlFor="" className="inputkey">
-              Item
-            </label>
-            <input type="text" className="inputvalue" placeholder=" input" />
-          </div>
-          <div className="forminput">
-            <label htmlFor="" className="inputkey">
-              Item
-            </label>
-            <input type="text" className="inputvalue" placeholder=" input" />
-          </div>
-          <div className="forminput">
-            <label htmlFor="" className="inputkey">
-              Item
-            </label>
-            <input type="text" className="inputvalue" placeholder=" input" />
-          </div>
-          <div className="forminput">
-            <label htmlFor="" className="inputkey">
-              Item
-            </label>
-            <input type="text" className="inputvalue" placeholder=" input" />
-          </div>
-          <div className="forminput">
-            <label htmlFor="" className="inputkey">
-              Item
-            </label>
-            <input type="text" className="inputvalue" placeholder=" input" />
-          </div>
-          <div className="forminput">
-            <label htmlFor="" className="inputkey">
-              Item
-            </label>
-            <input type="text" className="inputvalue" placeholder=" input" />
-          </div>
-          <div className="forminput">
-            <label htmlFor="" className="inputkey">
-              Item
-            </label>
-            <input type="text" className="inputvalue" placeholder=" input" />
-          </div>
-          <div className="forminput">
-            <label htmlFor="" className="inputkey">
-              Item
-            </label>
-            <input type="text" className="inputvalue" placeholder=" input" />
-          </div>
+          {formData.map((dataInput) => (
+            <div className="forminput">
+              <label htmlFor="" className="inputkey">
+                {dataInput.label}
+              </label>
+              <input
+                type={dataInput.type}
+                className="inputvalue"
+                placeholder={dataInput.placeholder}
+              />
+            </div>
+          ))}
         </div>
         <div className="grpbuttons">
           <button className="submitbutton" onClick={(e) => e.preventDefault()}>
