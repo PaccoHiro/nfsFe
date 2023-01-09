@@ -1,6 +1,7 @@
 import Datatable from "../../../components/datatable/Datatable";
 import SingleDetail from "../../../components/singleDetail/singleDetail";
 import { dataDetailOrder } from "../../../helpers/dataSource/dataDetailOrder";
+import OrderDetailsTemplate from "../../../components/orderDetailsTemplate/OrderDetailsTemplate";
 import { dataGridCustomerDetail } from "../../../helpers/dataSource/dataGridCustomerDetail";
 import "./orderDetail.scss";
 
@@ -11,7 +12,7 @@ const OrderDetail = () => {
         <SingleDetail data={dataDetailOrder} />
       </div>
       <div className="bottom">
-        <Datatable data={dataGridCustomerDetail} rowsperpage={8} />
+        <OrderDetailsTemplate />
       </div>
     </div>
   );

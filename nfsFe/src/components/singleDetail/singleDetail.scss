@@ -48,12 +48,16 @@
     }
     .details {
       flex: 3;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(31.75em, 100%), 1fr));
+      column-gap: 2em;
+      // display: flex;
+      // flex-wrap: wrap;
+      // justify-content: space-around;
       .detailfield {
-        width: 40%;
-        min-width: 13.75em;
+        // width: 100%;
+        // width: 40%;
+        // min-width: 13.75em;
         display: flex;
         align-items: center;
         gap: 2em;
@@ -71,7 +75,7 @@
         align-items: center;
         justify-content: center;
         padding: 0.625em;
-        width: 40%;
+        // width: 40%;
         // max-width: 35.625em;
         height: 1.5625em;
         border: 0.0625em solid rgb(105, 238, 220);

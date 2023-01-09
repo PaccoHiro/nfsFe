@@ -19,7 +19,7 @@ const SingleDetail = ({ data }) => {
             <div
               className="detailfield"
               key={i}
-              style={{ width: data.width ? data.width : "40%" }}
+              // style={{ width: data.width ? data.width : "40%" }}
             >
               <span className="fieldkey">{key}</span>
               <span className="fieldvalue">
