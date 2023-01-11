@@ -1,0 +1,49 @@
+.ddContainer {
+  flex: 1;
+  display: flex;
+  gap: 1em;
+  padding: 1em;
+  border-bottom: 1px solid lightgray;
+  .selContainer {
+    flex: 1;
+    .select {
+      width: 100%;
+    }
+  }
+  .qtyContainer {
+    flex: 0.4;
+  }
+  .actionsContainer {
+    flex: 0.5;
+    display: flex;
+    gap: 0.3em;
+    align-items: center;
+    // justify-content: space-around;
+    border: 0.5px solid lightgray;
+    border-radius: 4px;
+    .plusButton {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.3em;
+      padding: 0.6em 0em;
+      border: 0.5px solid lightgray;
+      border-radius: 4px;
+      background-color: rgba(135, 206, 250, 0.301);
+      cursor: pointer;
+    }
+    .minusButton {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0.3em;
+      padding: 0.6em 0;
+      border: 0.5px solid lightgray;
+      border-radius: 4px;
+      background-color: rgba(240, 128, 128, 0.308);
+      cursor: pointer;
+    }
+  }
+}

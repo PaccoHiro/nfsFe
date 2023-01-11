@@ -53,22 +53,28 @@ const OrderDetailsTemplate = () => {
       order.Discount.isApplied && (
         <>
           <TableRow>
-            <TableCell align="center">Discount</TableCell>
+            <TableCell className="subcellkey" align="center">
+              Discount
+            </TableCell>
 
             {order.Discount.rule.discNature === "Percentage" ? (
-              <TableCell align="center">
+              <TableCell className="subcellvalue" align="center">
                 {`${(totalPrice(order) * discount(order)) / 100}(${discount(
                   order
                 )}%) `}
               </TableCell>
             ) : order.Discount.rule.discNature === "Fixed Amount" ? (
-              <TableCell align="center">{discount(order)}</TableCell>
+              <TableCell className="subcellvalue" align="center">
+                {discount(order)}
+              </TableCell>
             ) : null}
           </TableRow>
           <TableRow>
-            <TableCell align="center">SubTotal with discount </TableCell>
+            <TableCell className="subcellkey" align="center">
+              SubTotal with discount{" "}
+            </TableCell>
 
-            <TableCell align="center">
+            <TableCell className="subcellvalue" align="center">
               {totalPrice(order) - discount(order)}
             </TableCell>
           </TableRow>
@@ -79,35 +85,39 @@ const OrderDetailsTemplate = () => {
 
   return (
     <div className="orderdetailstemplate">
-      <div className="title">orderdetails</div>
-      {/* <div className="tabContainer">
+      {/* <div className="title">orderdetails</div>
+      <div className="tabContainer">
 
         </div> */}
       <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
+          <TableHead className="tableHead">
             <TableRow className="hrow">
-              <TableCell width={"10%"} className="hcell" align="center">
+              <TableCell width={"5%"} className="hcell" align="center">
                 #
               </TableCell>
-              <TableCell width={"40%"} className="hcell" align="center">
+              <TableCell width={"35%"} className="hcell" align="center">
                 Item
               </TableCell>
-              <TableCell width={"10%"} align="center">
+              <TableCell width={"25%"} className="hcell" align="center">
                 Quantity
               </TableCell>
-              <TableCell width={"30%"} align="center">
+              <TableCell width={"25%"} className="hcell" align="center">
                 SubTotal
               </TableCell>
-              <TableCell align="center">Actions</TableCell>
+              <TableCell className="hcell" align="center">
+                Actions
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {rows.map((row, i) => (
-              <TableRow className="brow" key={row.name}>
-                <TableCell align="center">{i}</TableCell>
+              <TableRow className="brow" key={i}>
+                <TableCell className="idcell" align="center">
+                  {i}
+                </TableCell>
                 <TableCell className="bcell" align="center">
-                  {row.calories}
+                  {row.name}
                 </TableCell>
                 <TableCell align="center">{row.fat}</TableCell>
                 <TableCell align="center">{row.carbs}</TableCell>
@@ -120,24 +130,38 @@ const OrderDetailsTemplate = () => {
             ))}
             <TableRow>
               <TableCell
+                className="spanleft"
                 rowSpan={order?.Discount?.isApplied ? 5 : 4}
                 colSpan={2}
               />
-              <TableCell align="center">Subtotal</TableCell>
-              <TableCell align="center">123</TableCell>
+              <TableCell className="subcellkey" align="center">
+                Subtotal
+              </TableCell>
+              <TableCell className="subcellvalue" align="center">
+                123
+              </TableCell>
               <TableCell
+                className="spanright"
                 rowSpan={order?.Discount?.isApplied ? 5 : 4}
                 // colSpan={1}
               />
             </TableRow>
             <TableRow>
-              <TableCell align="center">Shipping Cost</TableCell>
-              <TableCell align="center">999</TableCell>
+              <TableCell className="subcellkey" align="center">
+                Shipping Cost
+              </TableCell>
+              <TableCell className="subcellvalue" align="center">
+                999
+              </TableCell>
             </TableRow>
             <DiscountRows order={order} />
             <TableRow>
-              <TableCell align="center">Total</TableCell>
-              <TableCell align="center">33265</TableCell>
+              <TableCell className="subcellkey" align="center">
+                Total
+              </TableCell>
+              <TableCell className="subcellvalue" align="center">
+                33265
+              </TableCell>
             </TableRow>
           </TableBody>
         </Table>

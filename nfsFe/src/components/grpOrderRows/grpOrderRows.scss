@@ -1,0 +1,9 @@
+.grpOrderRows {
+  &.true {
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+  }
+  &.false {
+    border: none;
+  }
+}
