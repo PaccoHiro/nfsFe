@@ -1,0 +1,70 @@
+.ddContainer {
+  flex: 1;
+  display: flex;
+  height: fit-content;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding: 0.5em;
+  border-bottom: 1px solid lightgray;
+  .selContainer {
+    flex: 1;
+    min-width: 60px;
+
+    .selectfcontrol {
+      // font-size: smaller;
+      width: 100%;
+      // .select {
+      //   // font-size: smaller;
+      // }
+    }
+  }
+  .grpqtyactions {
+    flex: 1;
+    display: flex;
+    gap: 1em;
+    min-width: 100px;
+    // min-width: 20.625em;
+
+    .qtyContainer {
+      flex: 1;
+      // min-width: 16em;
+      .textfield {
+        width: 100%;
+      }
+    }
+    .actionsContainer {
+      flex: 0.95;
+      display: flex;
+      height: 100%;
+      gap: 0.15em;
+      align-items: center;
+      // justify-content: space-around;
+      border: 0.5px solid lightgray;
+      border-radius: 4px;
+      .plusButton {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0.3em;
+        padding: 0.3em 0em;
+        border: 0.5px solid lightgray;
+        border-radius: 4px;
+        background-color: rgba(135, 206, 250, 0.301);
+        cursor: pointer;
+      }
+      .minusButton {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0.3em;
+        padding: 0.3em 0;
+        border: 0.5px solid lightgray;
+        border-radius: 4px;
+        background-color: rgba(240, 128, 128, 0.308);
+        cursor: pointer;
+      }
+    }
+  }
+}

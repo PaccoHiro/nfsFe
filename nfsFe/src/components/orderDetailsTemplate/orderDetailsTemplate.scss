@@ -18,4 +18,47 @@
     font-weight: bold;
     color: rgb(194, 193, 193);
   }
+  .hcell {
+    font-size: 0.9em;
+    font-weight: bold;
+    background-color: rgba(211, 211, 211, 0.418);
+    border-bottom: 1px solid lightgray;
+  }
+  .brow {
+    &:hover {
+      background-color: rgba(127, 255, 212, 0.288);
+    }
+  }
+  .idcell {
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+  .actionView {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.3em 0.6em;
+    border-radius: 5px;
+    border: 1px solid darkcyan;
+    background-color: rgba(0, 139, 139, 0.199);
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(0, 139, 139, 0.479);
+    }
+  }
+
+  .subcellkey {
+    background-color: lightgray;
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+  .subcellvalue {
+    background-color: rgba(211, 211, 211, 0.377);
+  }
+  .spanleft {
+    border-right: 1px solid lightgray;
+  }
+  .spanright {
+    border-left: 1px solid lightgray;
+  }
 }
