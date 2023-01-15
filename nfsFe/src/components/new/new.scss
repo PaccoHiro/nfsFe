@@ -5,9 +5,7 @@
   gap: 20px;
   padding: 20px;
   border-radius: 10px;
-  // box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.07);
-  // -webkit-box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.07);
-  // -moz-box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.07);
+
   -webkit-box-shadow: style.$custom-box-shadow;
   -moz-box-shadow: style.$custom-box-shadow;
   box-shadow: style.$custom-box-shadow;

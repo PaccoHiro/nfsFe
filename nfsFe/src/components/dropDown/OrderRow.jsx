@@ -22,8 +22,8 @@ const GrpOptions3 = {
   b2: ["ba2OP", "bb2OP"],
   b3: ["ba3OP", "bb3OP"],
 };
-
-const OrderRow = ({ indx, addRowHandler, deleteRowHandler }) => {
+// think to make it dynamic (user can define nb of selects and their data) => TBD
+const OrderRow = ({ orderRowData, addRowHandler, deleteRowHandler }) => {
   const [selectedValue1, setSelectedValue1] = useState("");
   const [selectedValue2, setSelectedValue2] = useState("");
   const [selectedValue3, setSelectedValue3] = useState("");
@@ -51,11 +51,13 @@ const OrderRow = ({ indx, addRowHandler, deleteRowHandler }) => {
   };
   //   console.log(qtyValue);
   return (
-    <div key={indx} className="ddContainer">
+    <div key={orderRowData.id} className="ddContainer">
       <div className="selContainer">
-        <FormControl className="select">
+        <FormControl className="selectfcontrol">
           <InputLabel id="label">options1</InputLabel>
           <Select
+            // size="small"
+            className="select"
             labelId="label"
             id="select1"
             value={selectedValue1}
@@ -73,9 +75,10 @@ const OrderRow = ({ indx, addRowHandler, deleteRowHandler }) => {
       </div>
 
       <div className="selContainer">
-        <FormControl className="select">
+        <FormControl className="selectfcontrol">
           <InputLabel id="label2">options2 </InputLabel>
           <Select
+            // size="small"
             className="select"
             labelId="label2"
             id="select2"
@@ -93,9 +96,10 @@ const OrderRow = ({ indx, addRowHandler, deleteRowHandler }) => {
         </FormControl>
       </div>
       <div className="selContainer">
-        <FormControl className="select">
+        <FormControl className="selectfcontrol">
           <InputLabel id="label3">options3 </InputLabel>
           <Select
+            // size="small"
             className="select"
             labelId="label3"
             id="select3"
@@ -112,24 +116,31 @@ const OrderRow = ({ indx, addRowHandler, deleteRowHandler }) => {
           </Select>
         </FormControl>
       </div>
-      <div className="qtyContainer">
-        <TextField
-          onChange={handleChangeQtySelect}
-          value={qtyValue}
-          id="outlined-number"
-          label="Number"
-          type="number"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-      </div>
-      <div className="actionsContainer">
-        <div className="plusButton" onClick={() => addRowHandler()}>
-          +
+      <div className="grpqtyactions">
+        <div className="qtyContainer">
+          <TextField
+            // size="small"
+            className="textfield"
+            onChange={handleChangeQtySelect}
+            value={qtyValue}
+            id="outlined-number"
+            label="Number"
+            type="number"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
         </div>
-        <div className="minusButton" onClick={() => deleteRowHandler(indx)}>
-          -
+        <div className="actionsContainer">
+          <div className="plusButton" onClick={() => addRowHandler()}>
+            +
+          </div>
+          <div
+            className="minusButton"
+            onClick={() => deleteRowHandler(orderRowData.id)}
+          >
+            -
+          </div>
         </div>
       </div>
     </div>

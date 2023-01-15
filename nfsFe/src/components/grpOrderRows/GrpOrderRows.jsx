@@ -33,7 +33,10 @@ const GrpOrderRows = () => {
   };
   const deleteRowHandler = (index) => {
     // console.log("index", index);
-    setOrderRowsList(orderRowsList.filter((orderRow) => orderRow.id !== index));
+    if (orderRowsList.length > 1)
+      setOrderRowsList(
+        orderRowsList.filter((orderRow) => orderRow.id !== index)
+      );
   };
   //   console.log(orderRowsList);
   return (
@@ -55,7 +58,7 @@ const GrpOrderRows = () => {
         orderRowsList.map((orderRow, i) => (
           <OrderRow
             key={orderRow.id}
-            indx={orderRow.id}
+            orderRowData={orderRow}
             addRowHandler={addRowHandler}
             deleteRowHandler={deleteRowHandler}
           />
