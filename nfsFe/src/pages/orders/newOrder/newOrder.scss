@@ -28,6 +28,7 @@
       color: rgb(194, 193, 193);
     }
     form {
+      flex: 1;
       display: flex;
       flex-wrap: wrap;
       flex-direction: column;
@@ -51,56 +52,79 @@
           margin: 5px 5px;
           .forminput {
             // flex: 1;
+            display: flex;
+            flex-wrap: wrap;
             width: 100%;
             margin-bottom: 1.75em;
+            // margin-top: 1.75em;
             // min-width: 300px;
             .inputkey {
+              width: 100%;
               font-size: large;
               font-weight: bold;
             }
             .inputvalue {
               width: 100%;
 
-              margin-top: 10px;
+              margin-top: 20px;
               font-size: large;
               border: none;
               outline: none;
               border-bottom: 1px solid rgba(0, 0, 0, 0.281);
             }
+            .shipWrapper {
+              margin-top: 10px;
+              flex: 1;
+              display: flex;
+              // height: fit-content;
+              .shipSelect {
+                flex: 2;
+                display: flex;
+              }
+
+              .shipCost {
+                flex: 1;
+              }
+            }
           }
         }
       }
-      .grpbuttons {
+      .grpBtnWrap {
+        width: 100%;
         display: flex;
-        gap: 20px;
+        justify-content: end;
+        .grpbuttons {
+          display: flex;
+          gap: 20px;
 
-        align-self: flex-end;
-        // margin-right: 10px;
-        margin: 10px;
-        width: 30%;
-        .submitbutton {
-          flex: 1;
-          align-items: center;
-          justify-content: space-between;
-          font-size: large;
-          border: 1px solid green;
-          border-radius: 10px;
-          background-color: rgba(0, 128, 0, 0.253);
-          cursor: pointer;
-          &:hover {
-            background-color: rgba(0, 128, 0, 0.459);
+          // align-self: flex-end;
+          // margin-right: 10px;
+          margin: 10px;
+          width: 30%;
+          .submitbutton {
+            flex: 1;
+            padding: 0;
+            font-size: 1.5vw;
+            border: 1px solid green;
+            border-radius: 10px;
+            background-color: rgba(0, 128, 0, 0.253);
+            cursor: pointer;
+            &:hover {
+              background-color: rgba(0, 128, 0, 0.459);
+            }
           }
-        }
-        .cancelbutton {
-          flex: 1;
-          font-size: large;
-          border: 1px solid red;
-          border-radius: 10px;
+          .cancelbutton {
+            flex: 1;
+            padding: 0;
+            font-size: 1.5vw;
+            border: 1px solid red;
+            border-radius: 10px;
 
-          background-color: rgba(255, 0, 0, 0.226);
-          cursor: pointer;
-          &:hover {
-            background-color: rgba(255, 0, 0, 0.527);
+            background-color: rgba(255, 0, 0, 0.226);
+            cursor: pointer;
+            &:hover {
+              background-color: rgba(255, 0, 0, 0.527);
+            }
           }
         }
       }

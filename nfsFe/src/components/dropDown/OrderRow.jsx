@@ -7,6 +7,8 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import "./orderRow.scss";
+import DeleteIcon from "@mui/icons-material/Delete";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 const options1 = [1, 2];
 const GrpOptions2 = {
@@ -57,6 +59,7 @@ const OrderRow = ({ orderRowData, addRowHandler, deleteRowHandler }) => {
           <InputLabel id="label">options1</InputLabel>
           <Select
             // size="small"
+            variant="standard"
             className="select"
             labelId="label"
             id="select1"
@@ -79,6 +82,7 @@ const OrderRow = ({ orderRowData, addRowHandler, deleteRowHandler }) => {
           <InputLabel id="label2">options2 </InputLabel>
           <Select
             // size="small"
+            variant="standard"
             className="select"
             labelId="label2"
             id="select2"
@@ -100,6 +104,7 @@ const OrderRow = ({ orderRowData, addRowHandler, deleteRowHandler }) => {
           <InputLabel id="label3">options3 </InputLabel>
           <Select
             // size="small"
+            variant="standard"
             className="select"
             labelId="label3"
             id="select3"
@@ -120,6 +125,7 @@ const OrderRow = ({ orderRowData, addRowHandler, deleteRowHandler }) => {
         <div className="qtyContainer">
           <TextField
             // size="small"
+            variant="standard"
             className="textfield"
             onChange={handleChangeQtySelect}
             value={qtyValue}
@@ -132,15 +138,15 @@ const OrderRow = ({ orderRowData, addRowHandler, deleteRowHandler }) => {
           />
         </div>
         <div className="actionsContainer">
-          <div className="plusButton" onClick={() => addRowHandler()}>
-            +
-          </div>
-          <div
-            className="minusButton"
+          <AddCircleOutlineIcon
+            className="addCircle"
+            onClick={() => addRowHandler()}
+          />
+
+          <DeleteIcon
+            className="deleteIcon"
             onClick={() => deleteRowHandler(orderRowData.id)}
-          >
-            -
-          </div>
+          />
         </div>
       </div>
     </div>

@@ -5,60 +5,110 @@ import { customerFormData } from "../../../helpers/dataSource/formInputData";
 import OrderRow from "../../../components/dropDown/OrderRow";
 import GrpOrderRows from "../../../components/grpOrderRows/GrpOrderRows";
 import SelectControl from "../../../components/select/SelectControl";
+import { TextField } from "@mui/material";
+import { useReducer } from "react";
+import {
+  INIT_STATE,
+  newOrderReducer,
+} from "../../../helpers/reducers/newOrderReducer";
 
 const NewOrder = () => {
+  const [state, dispatch] = useReducer(newOrderReducer, INIT_STATE);
+  const handleSelect = (e) => {
+    dispatch({
+      type: "SEL_CHANGE",
+      payload: { name: e.target.name, value: e.target.value },
+    });
+  };
+  console.log(state);
   return (
     <div className="newOrderContainer">
       <div className="newOrder">
-        {/* <New formData={customerFormData} /> */}
-
         <div className="title">Add New : </div>
         <form>
           <div className="formwrapper">
             <div className="left">
               <div className="forminput">
                 <label htmlFor="" className="inputkey">
-                  Customer {/* {dataInput.label} */}
+                  Customer
                 </label>
                 <SelectControl
+                  onChange={(e) => handleSelect(e)}
+                  name={"selCustomer"}
+                  value={""}
                   optionsData={["A", "B", "C"]}
                   showLabel={false}
                 />
               </div>
               <div className="forminput">
                 <label htmlFor="" className="inputkey">
-                  Shipping Adress {/* {dataInput.label} */}
+                  Shipping Adress
                 </label>
                 <input
-                  type="text" //{dataInput.type}
+                  onChange={(e) => handleSelect(e)}
+                  name="shipAdress"
+                  value={state?.shipAdress ? state.shipAdress : ""}
+                  type="text"
                   className="inputvalue"
-                  placeholder="placeholder" //{dataInput.placeholder}
+                  placeholder="placeholder"
                 />
               </div>
               <div className="forminput">
                 <label htmlFor="" className="inputkey">
-                  Shipping City {/* {dataInput.label} */}
+                  Shipping City
                 </label>
                 <input
-                  type="text" //{dataInput.type}
+                  onChange={(e) => handleSelect(e)}
+                  name="shipCity"
+                  value={state?.shipCity ? state.shipCity : ""}
+                  type="text"
                   className="inputvalue"
-                  placeholder="placeholder" //{dataInput.placeholder}
+                  placeholder="placeholder"
                 />
               </div>
               <div className="forminput">
                 <label htmlFor="" className="inputkey">
-                  Shipping Mode {/* {dataInput.label} */}
+                  Shipping Mode
                 </label>
-                <SelectControl
-                  optionsData={["ShipperA", "ShipperB", "ShipperC"]}
-                  showLabel={false}
-                />
+                <div className="shipWrapper">
+                  <div className="shipSelect">
+                    <SelectControl
+                      onChange={(e) => handleSelect(e)}
+                      value={""}
+                      name={"selShipMode"}
+                      optionsData={["ShipperA", "ShipperB", "ShipperC"]}
+                      showLabel={false}
+                    />
+                  </div>
+                  <div className="shipCost">
+                    <TextField
+                      onChange={(e) => handleSelect(e)}
+                      name="shipCost"
+                      value={state?.shipCost ? state.shipCost : ""}
+                      fullWidth
+                      size="small"
+                      id="standard-number"
+                      label="Number"
+                      type="number"
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      InputProps={{
+                        readOnly: true,
+                      }}
+                      variant="standard"
+                    />
+                  </div>
+                </div>
               </div>
               <div className="forminput">
                 <label htmlFor="" className="inputkey">
-                  Status {/* {dataInput.label} */}
+                  Status
                 </label>
                 <SelectControl
+                  onChange={(e) => handleSelect(e)}
+                  value={""}
+                  name={"selStatus"}
                   optionsData={["Pending", "Delivered", "Canceled"]}
                   showLabel={false}
                 />
@@ -68,20 +118,21 @@ const NewOrder = () => {
               <GrpOrderRows />
             </div>
           </div>
-
-          <div className="grpbuttons">
-            <button
-              className="submitbutton"
-              onClick={(e) => e.preventDefault()}
-            >
-              Submit
-            </button>
-            <button
-              className="cancelbutton"
-              onClick={(e) => e.preventDefault()}
-            >
-              Cancel
-            </button>
+          <div className="grpBtnWrap">
+            <div className="grpbuttons">
+              <button
+                className="submitbutton"
+                onClick={(e) => e.preventDefault()}
+              >
+                Submit
+              </button>
+              <button
+                className="cancelbutton"
+                onClick={(e) => e.preventDefault()}
+              >
+                Cancel
+              </button>
+            </div>
           </div>
         </form>
       </div>

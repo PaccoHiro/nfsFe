@@ -3,17 +3,20 @@ import { useState } from "react";
 import "./selectControl.scss";
 
 const SelectControl = ({
+  onChange,
+  value,
+  name,
   selectDataForm,
   optionsData,
-  initValue,
+  // initValue,// replaced by value ?
   showLabel = true,
 }) => {
-  const [selectedValue, setSelectedValue] = useState(
-    initValue ? initValue : ""
-  );
+  const [selectedValue, setSelectedValue] = useState(value ? value : "");
 
   const handleChangeSelect = (event) => {
     setSelectedValue(event.target.value);
+    value = event.target.value;
+    onChange(event);
   };
   return (
     <div className="selectWrapper">
@@ -27,6 +30,7 @@ const SelectControl = ({
         )}
         <Select
           // size="small"
+          name={name ? name : ""}
           className="select"
           labelId={selectDataForm?.labelId ? selectDataForm.labelId : "label"}
           id={selectDataForm?.id ? selectDataForm.id : "select"}
