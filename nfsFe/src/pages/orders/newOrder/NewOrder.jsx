@@ -20,7 +20,21 @@ const NewOrder = () => {
       payload: { name: e.target.name, value: e.target.value },
     });
   };
+
+  const updateGrpOrderRows = (orderArray) => {
+    dispatch({
+      type: "ORDER_LIST_CHANGE",
+      payload: orderArray,
+    });
+  };
+  const handleShipSelect = (e) => {
+    dispatch({
+      type: "SEL_SHIP_CHANGE",
+      payload: { name: e.target.name, value: e.target.value },
+    });
+  };
   console.log(state);
+
   return (
     <div className="newOrderContainer">
       <div className="newOrder">
@@ -45,6 +59,7 @@ const NewOrder = () => {
                   Shipping Adress
                 </label>
                 <input
+                  required
                   onChange={(e) => handleSelect(e)}
                   name="shipAdress"
                   value={state?.shipAdress ? state.shipAdress : ""}
@@ -58,6 +73,7 @@ const NewOrder = () => {
                   Shipping City
                 </label>
                 <input
+                  required
                   onChange={(e) => handleSelect(e)}
                   name="shipCity"
                   value={state?.shipCity ? state.shipCity : ""}
@@ -73,16 +89,26 @@ const NewOrder = () => {
                 <div className="shipWrapper">
                   <div className="shipSelect">
                     <SelectControl
-                      onChange={(e) => handleSelect(e)}
+                      onChange={(e) => {
+                        handleShipSelect(e);
+                      }}
                       value={""}
                       name={"selShipMode"}
-                      optionsData={["ShipperA", "ShipperB", "ShipperC"]}
+                      optionsData={[
+                        "ShipperA",
+                        "ShipperB",
+                        "ShipperC",
+                        "Others",
+                      ]}
                       showLabel={false}
                     />
                   </div>
                   <div className="shipCost">
                     <TextField
-                      onChange={(e) => handleSelect(e)}
+                      onChange={(e) => {
+                        handleSelect(e);
+                      }}
+                      required
                       name="shipCost"
                       value={state?.shipCost ? state.shipCost : ""}
                       fullWidth
@@ -94,7 +120,7 @@ const NewOrder = () => {
                         shrink: true,
                       }}
                       InputProps={{
-                        readOnly: true,
+                        readOnly: state.selShipMode === "Others" ? false : true,
                       }}
                       variant="standard"
                     />
@@ -115,7 +141,7 @@ const NewOrder = () => {
               </div>
             </div>
             <div className="right">
-              <GrpOrderRows />
+              <GrpOrderRows onUpdate={updateGrpOrderRows} />
             </div>
           </div>
           <div className="grpBtnWrap">

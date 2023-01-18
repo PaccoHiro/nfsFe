@@ -3,7 +3,7 @@ import { useState } from "react";
 import OrderRow from "../dropDown/OrderRow";
 import "./grpOrderRows.scss";
 
-const GrpOrderRows = () => {
+const GrpOrderRows = ({ onUpdate }) => {
   const [checked, setChecked] = useState(true);
   const [orderRowsList, setOrderRowsList] = useState([
     { id: 1, data: "x" },
@@ -33,12 +33,27 @@ const GrpOrderRows = () => {
   };
   const deleteRowHandler = (index) => {
     // console.log("index", index);
-    if (orderRowsList.length > 1)
-      setOrderRowsList(
-        orderRowsList.filter((orderRow) => orderRow.id !== index)
+    if (orderRowsList.length > 1) {
+      const newOrderRowList = orderRowsList.filter(
+        (orderRow) => orderRow.id !== index
       );
+      setOrderRowsList(newOrderRowList);
+      onUpdate(newOrderRowList); // update the form state
+    }
   };
-  //   console.log(orderRowsList);
+  const handleUpdate = (row) => {
+    const newOrderRowList = orderRowsList.map((orderRow) =>
+      orderRow.id === row.id
+        ? {
+            ...row,
+          }
+        : orderRow
+    );
+    setOrderRowsList(newOrderRowList);
+    onUpdate(newOrderRowList); // update the form state
+  };
+  // console.log(orderRowsList);
+
   return (
     <fieldset className={`grpOrderRows ${checked}`}>
       <legend>
@@ -57,6 +72,7 @@ const GrpOrderRows = () => {
       {orderRowsList &&
         orderRowsList.map((orderRow, i) => (
           <OrderRow
+            updateList={handleUpdate}
             key={orderRow.id}
             orderRowData={orderRow}
             addRowHandler={addRowHandler}
