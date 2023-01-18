@@ -30,6 +30,7 @@ const SelectControl = ({
         )}
         <Select
           // size="small"
+          required
           name={name ? name : ""}
           className="select"
           labelId={selectDataForm?.labelId ? selectDataForm.labelId : "label"}

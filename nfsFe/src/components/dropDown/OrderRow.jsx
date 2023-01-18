@@ -5,7 +5,7 @@ import {
   Select,
   TextField,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./orderRow.scss";
 import DeleteIcon from "@mui/icons-material/Delete";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
@@ -25,13 +25,29 @@ const GrpOptions3 = {
   b3: ["ba3OP", "bb3OP"],
 };
 // think to make it dynamic (user can define nb of selects and their data) => TBD
-const OrderRow = ({ orderRowData, addRowHandler, deleteRowHandler }) => {
+const OrderRow = ({
+  orderRowData,
+  addRowHandler,
+  deleteRowHandler,
+  updateList,
+}) => {
   const [selectedValue1, setSelectedValue1] = useState("");
   const [selectedValue2, setSelectedValue2] = useState("");
   const [selectedValue3, setSelectedValue3] = useState("");
   const [qtyValue, setQtyValue] = useState(0);
   //   const [options2 , setOptions2]= useState("")
 
+  useEffect(() => {
+    updateList({
+      id: orderRowData.id,
+      data: {
+        options1: selectedValue1,
+        options2: selectedValue2,
+        options3: selectedValue3,
+        qty: qtyValue,
+      },
+    });
+  }, [selectedValue1, selectedValue2, selectedValue3, qtyValue]);
   const handleChangeSelect1 = (event) => {
     setSelectedValue1(event.target.value);
     setSelectedValue2("");
@@ -52,6 +68,7 @@ const OrderRow = ({ orderRowData, addRowHandler, deleteRowHandler }) => {
     setQtyValue(event.target.value);
   };
   //   console.log(qtyValue);
+  // console.log(orderRowData);
   return (
     <div key={orderRowData.id} className="ddContainer">
       <div className="selContainer">
@@ -59,6 +76,7 @@ const OrderRow = ({ orderRowData, addRowHandler, deleteRowHandler }) => {
           <InputLabel id="label">options1</InputLabel>
           <Select
             // size="small"
+            required
             variant="standard"
             className="select"
             labelId="label"
@@ -82,6 +100,7 @@ const OrderRow = ({ orderRowData, addRowHandler, deleteRowHandler }) => {
           <InputLabel id="label2">options2 </InputLabel>
           <Select
             // size="small"
+            required
             variant="standard"
             className="select"
             labelId="label2"
@@ -104,6 +123,7 @@ const OrderRow = ({ orderRowData, addRowHandler, deleteRowHandler }) => {
           <InputLabel id="label3">options3 </InputLabel>
           <Select
             // size="small"
+            required
             variant="standard"
             className="select"
             labelId="label3"
@@ -125,6 +145,7 @@ const OrderRow = ({ orderRowData, addRowHandler, deleteRowHandler }) => {
         <div className="qtyContainer">
           <TextField
             // size="small"
+            required
             variant="standard"
             className="textfield"
             onChange={handleChangeQtySelect}
