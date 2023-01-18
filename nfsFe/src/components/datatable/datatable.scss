@@ -1,0 +1,24 @@
+@use "../../style/style.scss";
+
+.datatable {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: style.$custom-box-shadow;
+  -moz-box-shadow: style.$custom-box-shadow;
+  box-shadow: style.$custom-box-shadow;
+  // .title {
+  // flex: 1;
+  // }
+  .gridcontainer {
+    flex: 1;
+  }
+  .MuiDataGrid-root .MuiDataGrid-columnHeader,
+  .MuiDataGrid-root .MuiDataGrid-cell {
+    outline: none !important;
+  }
+}

@@ -1,0 +1,17 @@
+.customerDetail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  .top {
+    flex: 1;
+    display: flex;
+  }
+  .bottom {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}

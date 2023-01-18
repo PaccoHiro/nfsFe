@@ -1,41 +1,41 @@
 const lastSalesData = {
   title: "last sales ",
-  tabHead: ["Date", "Customer", "City", "Amount (MAD)", "Status"],
+  tabHead: ["Date", "Customer", "City", "Amount(MAD)", "Status"],
   rows: [
     [
       "11/12/2022",
       "kamal",
       "paris",
       202,
-      <span className={`statusCell Delivered`}>Delivered</span>,
+      <div className={`statusCell Delivered`}>Delivered</div>,
     ],
     [
       "02/05/2023",
       "john",
       "Barcelone",
       182,
-      <span className={`statusCell Processing`}>Processing</span>,
+      <div className={`statusCell Processing`}>Processing</div>,
     ],
     [
       "04/03/2023",
       "Doe",
       "Torino",
       243,
-      <span className={`statusCell Returned`}>Returned</span>,
+      <div className={`statusCell Returned`}>Returned</div>,
     ],
     [
       "24/04/2023",
       "Jane",
       "London",
       394,
-      <span className={`statusCell Processing`}>Processing</span>,
+      <div className={`statusCell Processing`}>Processing</div>,
     ],
     [
       "30/07/2023",
       "Moh",
       "Casa",
       124,
-      <span className={`statusCell Returned`}>Delivered</span>,
+      <div className={`statusCell Returned`}>Delivered</div>,
     ],
   ],
 };
@@ -43,7 +43,7 @@ const lastSalesData = {
 export default lastSalesData;
 
 const topSellers = {
-  title: "top SeellerMen ",
+  title: "top SalesMen ",
   tabHead: ["Name", "Avatar", "City", "Sales"],
   rows: [
     [

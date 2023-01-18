@@ -1,0 +1,14 @@
+.grpOrderRows {
+  flex: 1;
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  height: fit-content;
+  &.true {
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+  }
+  &.false {
+    border: none;
+  }
+}
