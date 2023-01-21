@@ -50,6 +50,10 @@
           gap: 5px;
           justify-content: space-between;
           margin: 5px 5px;
+          .grpOrderRowsWrapper,
+          .discountSelectWrapper {
+            width: 100%;
+          }
           .forminput {
             // flex: 1;
             display: flex;

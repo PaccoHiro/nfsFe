@@ -16,7 +16,7 @@ const SelectControl = ({
   const handleChangeSelect = (event) => {
     setSelectedValue(event.target.value);
     value = event.target.value;
-    onChange(event);
+    onChange(event); //parent change event handler
   };
   return (
     <div className="selectWrapper">

@@ -11,6 +11,7 @@ import {
   INIT_STATE,
   newOrderReducer,
 } from "../../../helpers/reducers/newOrderReducer";
+import DiscountSelect from "../../../components/discount/Discount";
 
 const NewOrder = () => {
   const [state, dispatch] = useReducer(newOrderReducer, INIT_STATE);
@@ -141,7 +142,12 @@ const NewOrder = () => {
               </div>
             </div>
             <div className="right">
-              <GrpOrderRows onUpdate={updateGrpOrderRows} />
+              <div className="grpOrderRowsWrapper">
+                <GrpOrderRows onUpdate={updateGrpOrderRows} />
+              </div>
+              <div className="discountSelectWrapper">
+                <DiscountSelect />
+              </div>
             </div>
           </div>
           <div className="grpBtnWrap">
