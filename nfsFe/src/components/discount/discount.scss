@@ -1,0 +1,55 @@
+.discount {
+  flex: 1;
+  display: flex;
+  padding: 5px;
+  //   flex-direction: column;
+  height: fit-content;
+  &.true {
+    border: 0.5px solid lightgray;
+    border-radius: 5px;
+  }
+  &.false {
+    border: none;
+  }
+
+  .discountContainer {
+    // flex: 1;
+    display: flex;
+    // flex-wrap: wrap;
+    //   width: 100%;
+    // margin-bottom: 1.75em;
+    // margin-top: 1.75em;
+    // min-width: 300px;
+    .selDiscLabel {
+      //   width: 100%;
+      flex: 1;
+      font-size: large;
+      font-weight: bold;
+      color: chocolate;
+    }
+    // .inputvalue {
+    //   width: 100%;
+
+    //   margin-top: 20px;
+    //   font-size: large;
+    //   border: none;
+    //   outline: none;
+    //   border-bottom: 1px solid rgba(0, 0, 0, 0.281);
+    // }
+    .discountWrapper {
+      background-color: brown;
+      margin-top: 10px;
+      flex: 1;
+      display: flex;
+      // height: fit-content;
+      .discSelect {
+        flex: 2;
+        display: flex;
+      }
+
+      .discValue {
+        flex: 1;
+      }
+    }
+  }
+}
