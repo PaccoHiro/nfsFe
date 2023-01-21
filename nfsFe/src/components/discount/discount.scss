@@ -13,42 +13,43 @@
   }
 
   .discountContainer {
-    // flex: 1;
+    flex: 1;
     display: flex;
-    // flex-wrap: wrap;
-    //   width: 100%;
-    // margin-bottom: 1.75em;
-    // margin-top: 1.75em;
-    // min-width: 300px;
-    .selDiscLabel {
-      //   width: 100%;
-      flex: 1;
-      font-size: large;
-      font-weight: bold;
-      color: chocolate;
-    }
-    // .inputvalue {
-    //   width: 100%;
 
-    //   margin-top: 20px;
-    //   font-size: large;
-    //   border: none;
-    //   outline: none;
-    //   border-bottom: 1px solid rgba(0, 0, 0, 0.281);
-    // }
-    .discountWrapper {
-      background-color: brown;
-      margin-top: 10px;
+    .selDiscLabel {
       flex: 1;
+      font-size: small;
+      font-weight: bold;
       display: flex;
-      // height: fit-content;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.281);
+    }
+
+    .discountWrapper {
+      border-left: 1px solid rgba(0, 0, 0, 0.281);
+
+      flex: 4;
+      display: flex;
+
       .discSelect {
         flex: 2;
         display: flex;
+
+        #select {
+          text-align: center;
+        }
       }
 
       .discValue {
         flex: 1;
+        .MuiInputLabel-root {
+          width: 100%;
+          text-align: center;
+        }
+        .MuiInputBase-input {
+          text-align: center;
+        }
       }
     }
   }
