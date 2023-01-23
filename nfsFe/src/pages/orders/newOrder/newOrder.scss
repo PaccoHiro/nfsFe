@@ -48,10 +48,11 @@
           display: flex;
           flex-wrap: wrap;
           gap: 5px;
-          justify-content: space-between;
+          // justify-content: space-between;
           margin: 5px 5px;
           .grpOrderRowsWrapper,
           .discountSelectWrapper {
+            height: fit-content;
             width: 100%;
           }
           .forminput {
@@ -91,6 +92,13 @@
               }
             }
           }
+        }
+        .left {
+          justify-content: space-between;
+        }
+        .right {
+          flex-direction: column;
+          justify-content: start;
         }
       }
       .grpBtnWrap {

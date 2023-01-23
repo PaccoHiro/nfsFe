@@ -5,12 +5,16 @@ import "./discount.scss";
 
 const DiscountSelect = ({ state }) => {
   const [checked, setChecked] = useState(true);
+  const [Tvalue, setTValue] = useState("");
 
   const handleSwitchChange = (event) => {
     setChecked(event.target.checked);
     // event.target.checked
     //   ? setOrderRowsList([{ id: 0, data: "" }])
     //   : setOrderRowsList("");
+  };
+  const handleTFieldChange = (e) => {
+    setTValue(e.target.value);
   };
   return (
     <fieldset className={`discount ${checked}`}>
@@ -30,7 +34,7 @@ const DiscountSelect = ({ state }) => {
       {checked && (
         <div className="discountContainer">
           <label htmlFor="" className="selDiscLabel">
-            test Discount
+            Discount
           </label>
           <div className="discountWrapper">
             <div className="discSelect">
@@ -44,16 +48,16 @@ const DiscountSelect = ({ state }) => {
             </div>
             <div className="discValue">
               <TextField
-                //   onChange={(e) => {
-                //     handleSelect(e);
-                //   }}
+                className="discInputValue"
+                onChange={(e) => {
+                  handleTFieldChange(e);
+                }}
                 required
                 name="DiscValue"
-                value={state?.discValue ? state.discValue : ""}
+                value={state?.discValue ? state.discValue : Tvalue}
                 fullWidth
                 size="small"
-                id="standard-number"
-                label="Number"
+                label="Amount"
                 type="number"
                 InputLabelProps={{
                   shrink: true,
