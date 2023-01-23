@@ -13,9 +13,13 @@ const GrpOrderRows = ({ onUpdate }) => {
 
   const handleSwitchChange = (event) => {
     setChecked(event.target.checked);
-    event.target.checked
-      ? setOrderRowsList([{ id: 0, data: "" }])
-      : setOrderRowsList("");
+    if (event.target.checked) {
+      setOrderRowsList([{ id: 0, data: "" }]);
+      onUpdate([{ id: 0, data: "" }]); // update the form state
+    } else {
+      setOrderRowsList("");
+      onUpdate(""); // update the form state
+    }
   };
   const addRowHandler = () => {
     // console.log("index", index);

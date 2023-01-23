@@ -28,6 +28,12 @@ const NewOrder = () => {
       payload: orderArray,
     });
   };
+  const updateDiscountSelect = (discObj) => {
+    dispatch({
+      type: "DISCOUNT_CHANGE",
+      payload: discObj,
+    });
+  };
   const handleShipSelect = (e) => {
     dispatch({
       type: "SEL_SHIP_CHANGE",
@@ -146,7 +152,7 @@ const NewOrder = () => {
                 <GrpOrderRows onUpdate={updateGrpOrderRows} />
               </div>
               <div className="discountSelectWrapper">
-                <DiscountSelect />
+                <DiscountSelect onUpdate={updateDiscountSelect} />
               </div>
             </div>
           </div>

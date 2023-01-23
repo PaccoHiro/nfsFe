@@ -19,6 +19,11 @@ export const newOrderReducer = (state, action) => {
         [action.payload.name]: action.payload.value,
         shipCost: shipArray[action.payload.value],
       };
+    case "DISCOUNT_CHANGE":
+      return {
+        ...state,
+        discount: action.payload,
+      };
     default:
       state; // or throw an error tbd
   }
