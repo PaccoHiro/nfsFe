@@ -3,7 +3,7 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import App from "../App";
+// import App from "../App";
 import Layout from "../layout/Layout";
 import Dashboard from "./dashboard/Dashboard";
 import Products from "./product/products/Products";
@@ -16,6 +16,7 @@ import OrderDetail from "./orders/orderDetail/orderDetail";
 import Orders from "./orders/orders/Orders";
 import NewOrder from "./orders/newOrder/NewOrder";
 import Users from "./users/users/Users";
+import UserDetails from "./users/userDetails/UserDetails";
 
 const Root = createRoutesFromElements(
   <>
@@ -39,8 +40,8 @@ const Root = createRoutesFromElements(
         </Route>
         <Route path="users">
           <Route index element={<Users />} />
-          {/* <Route path=":customerId" element={<OrderDetail />} />
-          <Route path="new" element={<NewOrder />} /> */}
+          <Route path=":customerId" element={<UserDetails />} />
+          {/* <Route path="new" element={<NewOrder />} /> */}
         </Route>
       </Route>
     </Route>
