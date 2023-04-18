@@ -1,2 +1,35 @@
+@use "../../style/style.scss";
+
 .card {
+  //respect the style of the other components
+  min-width: 200px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  height: 120px;
+  gap: 10px;
+  // border: 0.2px solid #6b33ff;
+  border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: style.$custom-box-shadow;
+  -moz-box-shadow: style.$custom-box-shadow;
+  box-shadow: style.$custom-box-shadow;
+  .imageWrapper {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    border-right: 1px solid rgba(0, 0, 0, 0.233);
+    img {
+      //   height: 17.5em;
+      //   width: 17.5em;
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+  }
+  .persoData {
+    flex: 2;
+  }
 }
