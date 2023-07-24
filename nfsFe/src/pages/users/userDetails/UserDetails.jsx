@@ -9,7 +9,7 @@ import "./userDetails.scss";
 const UserDetails = () => {
   return (
     <div className="userDetails">
-      <div className="top">
+      <div className="wrapper">
         <div className="left">
           <SingleDetail data={dataDetailUser} />
         </div>
