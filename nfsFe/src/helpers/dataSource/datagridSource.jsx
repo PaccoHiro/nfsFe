@@ -5,6 +5,13 @@ export const datagridSource = {
 
   columns: [
     {
+      field: "id",
+      headerName: "ID",
+      headerAlign: "center",
+      align: "center",
+      flex: 3,
+    },
+    {
       field: "category",
       headerName: "Category",
       headerAlign: "center",

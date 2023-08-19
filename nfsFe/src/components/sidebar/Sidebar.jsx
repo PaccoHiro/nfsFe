@@ -7,32 +7,45 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import PeopleOutlineIcon from "@mui/icons-material/PeopleOutline";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { Link } from "react-router-dom";
 const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="top">
-        <div className="logocontainer">logo</div>
+        <div className="logocontainer">
+          <Link className="link" to={"/"}>
+            logo
+          </Link>
+        </div>
       </div>
       {/* <hr /> */}
       <div className="center">
         <ul className="sbul">
           <div className="listtitle"> Main </div>
           <li>
-            <DashboardIcon className="icon" />
-            <span>Dashbord</span>
+            <Link className="link" to={"/"}>
+              <DashboardIcon className="icon" />
+              <span> Dashbord</span>
+            </Link>
           </li>
           <div className="listtitle"> Lists </div>
           <li>
-            <StoreIcon className="icon" />
-            <span>Products</span>
+            <Link className="link" to={"/items"}>
+              <StoreIcon className="icon" />
+              <span>Products</span>
+            </Link>
           </li>
           <li>
-            <PeopleOutlineIcon className="icon" />
-            <span>Customers</span>
+            <Link className="link" to={"/customers"}>
+              <PeopleOutlineIcon className="icon" />
+              <span>Customers</span>
+            </Link>
           </li>
           <li>
-            <LocalMallIcon className="icon" />
-            <span>Orders</span>
+            <Link className="link" to={"/orders"}>
+              <LocalMallIcon className="icon" />
+              <span>Orders</span>
+            </Link>
           </li>
           <li>
             <LocalShippingIcon className="icon" />

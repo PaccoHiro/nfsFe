@@ -5,6 +5,13 @@ export const dataGridOrders = {
 
   columns: [
     {
+      field: "id",
+      headerName: "ID",
+      headerAlign: "center",
+      align: "center",
+      flex: 3,
+    },
+    {
       field: "date",
       headerName: "Date",
       headerAlign: "center",

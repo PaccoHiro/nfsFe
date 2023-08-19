@@ -1,12 +1,12 @@
+import "./newUser.scss";
 import New from "../../../components/new/New";
 import { userFormData } from "../../../helpers/dataSource/formInputData";
-import "./UpdateUser.scss";
 
-const UpdateUser = () => {
+const NewUser = () => {
   return (
-    <div className="updateUser">
+    <div className="newUser">
       <New formData={userFormData} />
     </div>
   );
 };
-export default UpdateUser;
+export default NewUser;

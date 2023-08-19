@@ -5,6 +5,13 @@ export const dataGridUsers = {
 
   columns: [
     {
+      field: "id",
+      headerName: "ID",
+      headerAlign: "center",
+      align: "center",
+      flex: 3,
+    },
+    {
       field: "user",
       headerName: "User",
       headerAlign: "center",

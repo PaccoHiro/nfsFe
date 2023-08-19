@@ -17,6 +17,8 @@ import Orders from "./orders/orders/Orders";
 import NewOrder from "./orders/newOrder/NewOrder";
 import Users from "./users/users/Users";
 import UserDetails from "./users/userDetails/UserDetails";
+import NewUser from "./users/newUser/NewUser";
+import UpdateUser from "./users/updateUser/UpdateUser";
 
 const Root = createRoutesFromElements(
   <>
@@ -41,7 +43,8 @@ const Root = createRoutesFromElements(
         <Route path="users">
           <Route index element={<Users />} />
           <Route path=":customerId" element={<UserDetails />} />
-          {/* <Route path="new" element={<NewOrder />} /> */}
+          <Route path=":customerId/update" element={<UpdateUser />} />
+          <Route path="new" element={<NewUser />} />
         </Route>
       </Route>
     </Route>

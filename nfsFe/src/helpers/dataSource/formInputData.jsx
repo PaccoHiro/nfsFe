@@ -15,3 +15,11 @@ export const customerFormData = [
   { label: "Adress", type: "text", placeHolder: "adress" },
   { label: "City", type: "text", placeHolder: "city" },
 ];
+
+export const userFormData = [
+  { label: "Name", type: "text", placeHolder: "name" },
+  { label: "Phone", type: "text", placeHolder: "phone" },
+  { label: "Adress", type: "text", placeHolder: "adress" },
+  { label: "Mail", type: "text", placeHolder: "mail" },
+  { label: "State", type: "text", placeHolder: "state" },
+];
