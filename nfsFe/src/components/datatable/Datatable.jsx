@@ -1,6 +1,7 @@
 import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import ActionsColumn from "../actionsColumn/ActionsColumns";
+import { Link } from "react-router-dom";
 
 const Datatable = ({ data, rowsperpage }) => {
   const actionsColumn = [
@@ -10,12 +11,19 @@ const Datatable = ({ data, rowsperpage }) => {
       headerAlign: "center",
       sortable: false,
       flex: 3,
-      renderCell: () => <ActionsColumn />,
+      renderCell: (params) => (
+        <ActionsColumn id={params.row.id} slug={data.slug} />
+      ),
     },
   ];
   return (
     <div className="datatable">
-      <div className="title">{data.title}</div>
+      <div className="dataHeadContainer">
+        <div className="title">{data.title}</div>
+        <Link to={`/${data.slug}/new`} className="addLink">
+          <div className="addLinkContainer">Add</div>
+        </Link>
+      </div>
       <div className="gridcontainer">
         <DataGrid
           rows={data.rows}

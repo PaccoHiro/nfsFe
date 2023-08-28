@@ -2,6 +2,7 @@ import QtyCaution from "../../components/qtyCaution/QtyCution";
 
 export const datagridSource = {
   title: "Items : ",
+  slug: "items",
 
   columns: [
     {

@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import "./actionsColumns.scss";
 
-const ActionsColumn = () => {
+const ActionsColumn = ({ id, slug }) => {
   return (
     <div className="cellActions">
       <div className="view">
-        <Link className="link" to={"123456789"}>
+        <Link className="actionLink" to={`/${slug}/${id}`}>
           View
         </Link>
       </div>

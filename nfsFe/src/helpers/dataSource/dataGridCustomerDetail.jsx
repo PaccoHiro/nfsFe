@@ -2,6 +2,7 @@ import Dstatus from "../../components/deleveryStatus/Dstatus";
 
 export const dataGridCustomerDetail = {
   title: "Orders : ",
+  slug: "orders",
 
   columns: [
     {

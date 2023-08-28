@@ -13,6 +13,9 @@
     &:hover {
       cursor: pointer;
     }
+    .actionLink {
+      text-decoration: none;
+    }
   }
   .delete {
     padding: 5px 10px;

@@ -1,8 +1,8 @@
 import "./newOrder.scss";
-import New from "../../../components/new/New";
-import { customerFormData } from "../../../helpers/dataSource/formInputData";
+// import New from "../../../components/new/New";
+// import { customerFormData } from "../../../helpers/dataSource/formInputData";
 
-import OrderRow from "../../../components/dropDown/OrderRow";
+// import OrderRow from "../../../components/dropDown/OrderRow";
 import GrpOrderRows from "../../../components/grpOrderRows/GrpOrderRows";
 import SelectControl from "../../../components/select/SelectControl";
 import { TextField } from "@mui/material";
@@ -12,6 +12,9 @@ import {
   newOrderReducer,
 } from "../../../helpers/reducers/newOrderReducer";
 import DiscountSelect from "../../../components/discount/Discount";
+import { useNavigate } from "react-router-dom";
+import ShippingModeInput from "../../../components/shippingModeInput/ShippingModeInput";
+import OrderFormInput from "../../../components/orderFormInput/orderFormInput";
 
 const NewOrder = () => {
   const [state, dispatch] = useReducer(newOrderReducer, INIT_STATE);
@@ -40,7 +43,9 @@ const NewOrder = () => {
       payload: { name: e.target.name, value: e.target.value },
     });
   };
-  console.log(state);
+  const navigate = useNavigate();
+
+  // console.log(state);
 
   return (
     <div className="newOrderContainer">
@@ -49,103 +54,52 @@ const NewOrder = () => {
         <form>
           <div className="formwrapper">
             <div className="left">
-              <div className="forminput">
-                <label htmlFor="" className="inputkey">
-                  Customer
-                </label>
-                <SelectControl
-                  onChange={(e) => handleSelect(e)}
-                  name={"selCustomer"}
-                  value={""}
-                  optionsData={["A", "B", "C"]}
-                  showLabel={false}
-                />
-              </div>
-              <div className="forminput">
-                <label htmlFor="" className="inputkey">
-                  Shipping Adress
-                </label>
-                <input
-                  required
-                  onChange={(e) => handleSelect(e)}
-                  name="shipAdress"
-                  value={state?.shipAdress ? state.shipAdress : ""}
-                  type="text"
-                  className="inputvalue"
-                  placeholder="placeholder"
-                />
-              </div>
-              <div className="forminput">
-                <label htmlFor="" className="inputkey">
-                  Shipping City
-                </label>
-                <input
-                  required
-                  onChange={(e) => handleSelect(e)}
-                  name="shipCity"
-                  value={state?.shipCity ? state.shipCity : ""}
-                  type="text"
-                  className="inputvalue"
-                  placeholder="placeholder"
-                />
-              </div>
-              <div className="forminput">
-                <label htmlFor="" className="inputkey">
-                  Shipping Mode
-                </label>
-                <div className="shipWrapper">
-                  <div className="shipSelect">
-                    <SelectControl
-                      onChange={(e) => {
-                        handleShipSelect(e);
-                      }}
-                      value={""}
-                      name={"selShipMode"}
-                      optionsData={[
-                        "ShipperA",
-                        "ShipperB",
-                        "ShipperC",
-                        "Others",
-                      ]}
-                      showLabel={false}
-                    />
-                  </div>
-                  <div className="shipCost">
-                    <TextField
-                      onChange={(e) => {
-                        handleSelect(e);
-                      }}
-                      required
-                      name="shipCost"
-                      value={state?.shipCost ? state.shipCost : ""}
-                      fullWidth
-                      size="small"
-                      id="standard-number"
-                      label="Number"
-                      type="number"
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                      InputProps={{
-                        readOnly: state.selShipMode === "Others" ? false : true,
-                      }}
-                      variant="standard"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="forminput">
-                <label htmlFor="" className="inputkey">
-                  Status
-                </label>
-                <SelectControl
-                  onChange={(e) => handleSelect(e)}
-                  value={""}
-                  name={"selStatus"}
-                  optionsData={["Pending", "Delivered", "Canceled"]}
-                  showLabel={false}
-                />
-              </div>
+              <OrderFormInput
+                label="Customer"
+                inputId="selCustomer"
+                inputType="select"
+                onChange={(e) => handleSelect(e)}
+                name="selCustomer"
+                value=""
+                optionsData={["A", "B", "C"]}
+                showLabel={false}
+              />
+              <OrderFormInput
+                label="Shipping Address"
+                inputId="shipAdress"
+                inputType="text"
+                required
+                onChange={(e) => handleSelect(e)}
+                name="shipAdress"
+                value={state?.shipAdress ? state.shipAdress : ""}
+                placeholder="placeholder"
+              />
+              <OrderFormInput
+                label="Shipping City"
+                inputId="shipCity"
+                inputType="text"
+                required
+                onChange={(e) => handleSelect(e)}
+                name="shipCity"
+                value={state?.shipCity ? state.shipCity : ""}
+                placeholder="placeholder"
+              />
+              {/* trying to encapsulate shippingmodeinput */}
+              <ShippingModeInput
+                state={state}
+                handleShipSelect={handleShipSelect}
+                handleSelect={handleSelect}
+              />
+              <OrderFormInput
+                label="Status"
+                inputId="selStatus"
+                inputType="select"
+                onChange={(e) => handleSelect(e)}
+                name="selStatus"
+                value=""
+                optionsData={["Pending", "Delivered", "Canceled"]}
+                showLabel={false}
+              />
             </div>
             <div className="right">
               <div className="grpOrderRowsWrapper">
@@ -166,7 +120,10 @@ const NewOrder = () => {
               </button>
               <button
                 className="cancelbutton"
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(-1);
+                }}
               >
                 Cancel
               </button>

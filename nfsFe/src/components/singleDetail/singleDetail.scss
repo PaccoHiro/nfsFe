@@ -1,4 +1,4 @@
-@use "../../style/style.scss";
+@use "../../style/style.scss" as style;
 
 .singleDetailWrap {
   font-size: 1rem;
@@ -48,8 +48,8 @@
     }
     .details {
       flex: 3;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(min(31.75em, 100%), 1fr));
+      //display: grid;
+      // grid-template-columns: repeat(auto-fill, minmax(min(31.75em, 100%), 1fr));
       column-gap: 2em;
       // display: flex;
       // flex-wrap: wrap;
@@ -70,20 +70,45 @@
           font-weight: bold;
         }
       }
-      .editbutton {
+      .grpbtn {
         display: flex;
         align-items: center;
-        justify-content: center;
-        padding: 0.625em;
-        // width: 40%;
-        // max-width: 35.625em;
-        height: 1.5625em;
-        border: 0.0625em solid rgb(105, 238, 220);
-        background-color: rgba(105, 238, 220, 0.274);
-        border-radius: 0.625em;
-        &:hover {
-          background-color: rgb(105, 238, 220);
-          cursor: pointer;
+        justify-content: space-between;
+        gap: 10px;
+
+        .editbutton {
+          display: flex;
+          flex: 1;
+          align-items: center;
+          justify-content: center;
+          padding: 0.625em;
+          // width: 40%;
+          // max-width: 35.625em;
+          height: 1.5625em;
+          border: 0.0625em solid rgb(105, 238, 220);
+          background-color: rgba(105, 238, 220, 0.274);
+          border-radius: 0.625em;
+          &:hover {
+            background-color: rgb(105, 238, 220);
+            cursor: pointer;
+          }
+        }
+        .backbutton {
+          display: flex;
+          flex: 1;
+          align-items: center;
+          justify-content: center;
+          padding: 0.625em;
+          // width: 40%;
+          // max-width: 35.625em;
+          height: 1.5625em;
+          border: 0.0625em solid rgb(243, 88, 101);
+          background-color: rgba(243, 88, 101, 0.274);
+          border-radius: 0.625em;
+          &:hover {
+            background-color: rgb(243, 88, 101);
+            cursor: pointer;
+          }
         }
       }
     }

@@ -1,5 +1,5 @@
 import Chart from "../../../components/chart/Chart";
-import SingleDetail from "../../../components/singleDetail/singleDetail";
+import SingleDetail from "../../../components/singleDetail/SingleDetail";
 import TabList from "../../../components/table/Table";
 import lastSalesData from "../../../helpers/dataSource/data";
 import { dataDetailItem } from "../../../helpers/dataSource/dataDetailItem";

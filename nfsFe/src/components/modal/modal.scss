@@ -1,0 +1,44 @@
+@use "../../style/style.scss";
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #8ad8eba4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  .modalContainer {
+    // height: 500px;
+    width: 50vw;
+    min-width: 400px;
+    background-color: #fff;
+    border-radius: 0.625em;
+    -webkit-box-shadow: style.$custom-box-shadow;
+    -moz-box-shadow: style.$custom-box-shadow;
+    box-shadow: style.$custom-box-shadow;
+    display: flex;
+    // flex-direction: column;
+    // justify-content: space-between;
+    .top {
+      //   height: 70%;
+      background-color: chartreuse;
+    }
+    .mid {
+      background-color: darkorange;
+      height: 80%;
+    }
+    .grpbtn {
+      padding: 20px;
+      //   height: 40px;
+      //   width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      background-color: cadetblue;
+    }
+  }
+}

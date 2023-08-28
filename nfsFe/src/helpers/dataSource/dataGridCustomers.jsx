@@ -2,7 +2,7 @@ import QtyCaution from "../../components/qtyCaution/QtyCution";
 
 export const dataGridCustomers = {
   title: "Customers : ",
-
+  slug: "customers",
   columns: [
     {
       field: "id",

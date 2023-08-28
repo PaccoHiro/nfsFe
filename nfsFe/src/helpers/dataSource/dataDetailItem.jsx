@@ -1,16 +1,7 @@
 export const dataDetailItem = {
   title: " Item Details ",
-  keys: [
-    "Category",
-    "Name",
-    "Variant",
-    "Sku",
-    "Created",
-    "Updated",
-    "Quantity",
-    "Cost",
-    "Price",
-  ],
+  slug: "itemDetails",
+  modifiables: ["Quantity", "Cost", "Price"],
   values: {
     category: "Car",
     name: "Toyo",

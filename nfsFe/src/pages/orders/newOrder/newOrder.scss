@@ -55,43 +55,6 @@
             height: fit-content;
             width: 100%;
           }
-          .forminput {
-            // flex: 1;
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-            margin-bottom: 1.75em;
-            // margin-top: 1.75em;
-            // min-width: 300px;
-            .inputkey {
-              width: 100%;
-              font-size: large;
-              font-weight: bold;
-            }
-            .inputvalue {
-              width: 100%;
-
-              margin-top: 20px;
-              font-size: large;
-              border: none;
-              outline: none;
-              border-bottom: 1px solid rgba(0, 0, 0, 0.281);
-            }
-            .shipWrapper {
-              margin-top: 10px;
-              flex: 1;
-              display: flex;
-              // height: fit-content;
-              .shipSelect {
-                flex: 2;
-                display: flex;
-              }
-
-              .shipCost {
-                flex: 1;
-              }
-            }
-          }
         }
         .left {
           justify-content: space-between;

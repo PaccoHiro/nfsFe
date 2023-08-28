@@ -1,0 +1,28 @@
+.forminput {
+  // flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 1.75em;
+  // margin-top: 1.75em;
+  // min-width: 300px;
+  .inputkey {
+    width: 100%;
+    font-size: large;
+    font-weight: bold;
+  }
+  .shipWrapper {
+    margin-top: 10px;
+    flex: 1;
+    display: flex;
+    // height: fit-content;
+    .shipSelect {
+      flex: 2;
+      display: flex;
+    }
+
+    .shipCost {
+      flex: 1;
+    }
+  }
+}

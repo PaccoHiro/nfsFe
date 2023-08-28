@@ -1,6 +1,5 @@
 import Datatable from "../../../components/datatable/Datatable";
-import SingleDetail from "../../../components/singleDetail/singleDetail";
-
+import SingleDetail from "../../../components/singleDetail/SingleDetail";
 import { dataDetailCustomer } from "../../../helpers/dataSource/dataDetailCutomer";
 import { dataGridCustomerDetail } from "../../../helpers/dataSource/dataGridCustomerDetail";
 import "./customerDetail.scss";

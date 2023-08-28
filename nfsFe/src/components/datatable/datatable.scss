@@ -14,6 +14,26 @@
   // .title {
   // flex: 1;
   // }
+  .dataHeadContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .addLink {
+      text-decoration: none;
+
+      .addLinkContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        font-weight: 600px;
+        padding: 10px;
+        border-radius: 6px;
+        background-color: #b4d5e457;
+        cursor: pointer;
+      }
+    }
+  }
   .gridcontainer {
     flex: 1;
   }

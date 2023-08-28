@@ -4,15 +4,7 @@ export const dataDetailOrder = {
   // fontSize: "0.8em",
   // width: "30%",
   title: " Order Details ",
-  keys: [
-    "Date",
-    "Customer",
-    "Phone",
-    "Shipping Adress",
-    "Shipping City",
-    "Shipping Mode",
-    "State",
-  ],
+  modifiables: ["Shipping Adress", "Shipping City", "State"],
   values: {
     date: "02/11/2023",
     customer: "jhon Doe",

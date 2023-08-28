@@ -43,7 +43,7 @@ const Chart = () => {
               <XAxis dataKey="month" />
 
               <CartesianGrid strokeDasharray="3 3" />
-              <Tooltip />
+              <Tooltip wrapperStyle={{ zIndex: -1000 }} />
               <Area
                 type="monotone"
                 dataKey="revenue"
