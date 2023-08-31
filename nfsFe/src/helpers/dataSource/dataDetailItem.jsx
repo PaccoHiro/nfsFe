@@ -1,6 +1,6 @@
 export const dataDetailItem = {
   title: " Item Details ",
-  slug: "itemDetails",
+  slug: "item",
   modifiables: ["Quantity", "Cost", "Price"],
   values: {
     category: "Car",

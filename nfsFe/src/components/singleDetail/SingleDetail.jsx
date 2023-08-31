@@ -2,17 +2,15 @@ import { useNavigate } from "react-router-dom";
 import "./singleDetail.scss";
 import { useState } from "react";
 import Modal from "../modal/Modal";
+import Dstatus from "../deleveryStatus/Dstatus";
 
 const SingleDetail = ({ data }) => {
   const dataKeys = Object.keys(data.values);
   // extract data to use in modal
   const modifiableData = {};
   data.modifiables.forEach((key) => {
-    modifiableData[key] = data.values[key.toLowerCase()];
+    modifiableData[key] = data.values[key.replace(" ", "").toLowerCase()];
   }); //expected : {a: 'x', b: 'y', c: 'z'}
-  // const modifiableData = data.modifiables.map((key) => ({
-  //   [key]: data.modifiables[key],
-  // }));//[{},{},{}....]
   console.log(modifiableData);
 
   const [modal, setModal] = useState(false); // modal state
@@ -52,8 +50,14 @@ const SingleDetail = ({ data }) => {
               >
                 <span className="fieldkey">{key}</span>
                 <span className="fieldvalue">
+                  {/* for colors of  delivery status tag */}
+                  {key === "state" ? (
+                    <Dstatus status={"Delivered"} />
+                  ) : (
+                    data.values[key.replace(" ", "").toLowerCase()]
+                  )}
                   {/* {console.log(data.values[key.replace(" ", "").toLowerCase()])} */}
-                  {data.values[key.replace(" ", "").toLowerCase()]}
+                  {/* {data.values[key.replace(" ", "").toLowerCase()]} */}
                 </span>
               </div>
             ))}
