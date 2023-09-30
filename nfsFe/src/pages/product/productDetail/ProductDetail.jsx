@@ -1,3 +1,4 @@
+import { useParams } from "react-router-dom";
 import Chart from "../../../components/chart/Chart";
 import SingleDetail from "../../../components/singleDetail/SingleDetail";
 import TabList from "../../../components/table/Table";
@@ -6,6 +7,9 @@ import { dataDetailItem } from "../../../helpers/dataSource/dataDetailItem";
 import "./productDetail.scss";
 
 const ProductDetail = () => {
+  const { itemId } = useParams();
+  console.log('itemId', itemId); // Check the console to see if itemId is logged
+  
   // console.log(dataDetailItem);
   return (
     <div className="productDetail">

@@ -1,0 +1,29 @@
+.not-found {
+    text-align: center;
+    margin-top: 50px;
+    color: #333;
+  
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+  
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+  
+    .go-back-button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  }
+  

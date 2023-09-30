@@ -16,34 +16,46 @@ import UserDetails from "./users/userDetails/UserDetails";
 import NewUser from "./users/newUser/NewUser";
 import UpdateUser from "./users/updateUser/UpdateUser";
 import Login from "./login/Login";
+import NotFound from "../components/notfound404/NotFound";
+import AllowedRolesRoute from "../helpers/allowedroles/AllowedRolesRoute";
+import AllowedRolesComponent from "../helpers/allowedroles/AllowedRolesRoute";
 
 const Root = () => (
   <Routes>
     <Route path="/login" element={<Login />} />
     <Route path="/" element={<ProtectedRoute element={<Layout />} />} >
       <Route index element={<Dashboard />} />
-      <Route path="items" element={<Routes>
+      <Route path="items/*" element={<Routes>
         <Route index element={<Products />} />
         <Route path=":itemId" element={<ProductDetail />} />
-        <Route path="new" element={<NewItem />} />
+        
+        <Route path="new" element={<AllowedRolesComponent allowedRoles={['ADMIN','MANAGER']}><NewItem /></AllowedRolesComponent>} />
+
+        
       </Routes>} />
-      <Route path="customers" element={<Routes>
+      <Route path="customers/*" element={<Routes>
         <Route index element={<Customers />} />
         <Route path=":customerId" element={<CustomerDetail />} />
         <Route path="new" element={<NewCustomer />} />
       </Routes>} />
-      <Route path="orders" element={<Routes>
+      <Route path="orders/*" element={<Routes>
         <Route index element={<Orders />} />
         <Route path=":orderId" element={<OrderDetail />} />
         <Route path="new" element={<NewOrder />} />
       </Routes>} />
-      <Route path="users" element={<Routes>
-        <Route index element={<Users />} />
-        <Route path=":userId" element={<UserDetails />} />
-        <Route path=":userId/update" element={<UpdateUser />} />
-        <Route path="new" element={<NewUser />} />
-      </Routes>} />
+      
+        <Route path="users/*" element={
+        <AllowedRolesRoute allowedRoles={['ADMIN']}>
+          <Routes>
+            <Route index element={<Users />} />
+            <Route path=":userId" element={<UserDetails />} />
+            <Route path=":userId/update" element={<UpdateUser />} />
+            <Route path="new" element={<NewUser />} />
+          </Routes>
+        </AllowedRolesRoute>} />
+      
     </Route>
+    <Route path="*" element={<NotFound />} /> {/* 404 for all other paths */}
   </Routes>
 );
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../../helpers/contexts/AuthContext';
+import { useAuth } from '../../helpers/contexts/AuthContext'; // Adjust the path based on your project structure
+import './Login.scss';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -15,22 +16,24 @@ const Login = () => {
   if (isAuthenticated) return <Navigate to="/" />;
 
   return (
-    <form onSubmit={handleSubmit}>
-      {error && <p>{error}</p>}
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Login</button>
-    </form>
+    <div className="form-container">
+      <form onSubmit={handleSubmit}>
+        {error && <p className="error">{error}</p>}
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Login</button>
+      </form>
+    </div>
   );
 };
 
