@@ -1,9 +1,5 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-} from "react-router-dom";
-// import App from "../App";
+import { Route, Routes } from "react-router-dom";
+import ProtectedRoute from "../helpers/protectedRoute/ProtectedRoute";
 import Layout from "../layout/Layout";
 import Dashboard from "./dashboard/Dashboard";
 import Products from "./product/products/Products";
@@ -19,36 +15,36 @@ import Users from "./users/users/Users";
 import UserDetails from "./users/userDetails/UserDetails";
 import NewUser from "./users/newUser/NewUser";
 import UpdateUser from "./users/updateUser/UpdateUser";
+import Login from "./login/Login";
 
-const Root = createRoutesFromElements(
-  <>
-    <Route element={<Layout />}>
-      <Route path="/">
-        <Route index element={<Dashboard />} />
-        <Route path="items">
-          <Route index element={<Products />} />
-          <Route path=":itemId" element={<ProductDetail />} />
-          <Route path="new" element={<NewItem />} />
-        </Route>
-        <Route path="customers">
-          <Route index element={<Customers />} />
-          <Route path=":customerId" element={<CustomerDetail />} />
-          <Route path="new" element={<NewCustomer />} />
-        </Route>
-        <Route path="orders">
-          <Route index element={<Orders />} />
-          <Route path=":customerId" element={<OrderDetail />} />
-          <Route path="new" element={<NewOrder />} />
-        </Route>
-        <Route path="users">
-          <Route index element={<Users />} />
-          <Route path=":customerId" element={<UserDetails />} />
-          <Route path=":customerId/update" element={<UpdateUser />} />
-          <Route path="new" element={<NewUser />} />
-        </Route>
-      </Route>
+const Root = () => (
+  <Routes>
+    <Route path="/login" element={<Login />} />
+    <Route path="/" element={<ProtectedRoute element={<Layout />} />} >
+      <Route index element={<Dashboard />} />
+      <Route path="items" element={<Routes>
+        <Route index element={<Products />} />
+        <Route path=":itemId" element={<ProductDetail />} />
+        <Route path="new" element={<NewItem />} />
+      </Routes>} />
+      <Route path="customers" element={<Routes>
+        <Route index element={<Customers />} />
+        <Route path=":customerId" element={<CustomerDetail />} />
+        <Route path="new" element={<NewCustomer />} />
+      </Routes>} />
+      <Route path="orders" element={<Routes>
+        <Route index element={<Orders />} />
+        <Route path=":orderId" element={<OrderDetail />} />
+        <Route path="new" element={<NewOrder />} />
+      </Routes>} />
+      <Route path="users" element={<Routes>
+        <Route index element={<Users />} />
+        <Route path=":userId" element={<UserDetails />} />
+        <Route path=":userId/update" element={<UpdateUser />} />
+        <Route path="new" element={<NewUser />} />
+      </Routes>} />
     </Route>
-  </>
+  </Routes>
 );
 
 export default Root;
